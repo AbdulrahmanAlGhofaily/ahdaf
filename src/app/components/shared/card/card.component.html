@@ -1,0 +1,21 @@
+<li>
+  <a class="card smooth-corners" [routerLink]="[goalData.id]">
+    <h3 class="max-text">{{ goalData.title }}</h3>
+    <span class="seprator"></span>
+    <p class="max-text" *ngIf="goalData.description; else elseBlock">
+      {{ goalData.description }}
+    </p>
+    <ng-template #elseBlock>
+      <p class="card-discription">لا يوجد وصف</p>
+    </ng-template>
+    <span class="seprator"></span>
+    <div class="card-dates">
+      <span>النهاية: {{ getGoalEndDate() }}</span>
+      <span *ngIf="goalData.status === 'active'"
+        >تبقى: {{ getDaysLeft() }} أيام</span
+      >
+      <span *ngIf="goalData.status === 'done'">تم تحقيق الهدف 🎉</span>
+    </div>
+    <div class="card-status" [ngClass]="goalData.status"></div>
+  </a>
+</li>

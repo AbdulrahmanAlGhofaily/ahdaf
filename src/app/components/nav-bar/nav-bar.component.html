@@ -1,0 +1,47 @@
+<nav class="nav-bar glassy smooth-top-corners shadow-top">
+  <ul class="nav-list">
+    <li>
+      <a routerLink="/main" [routerLinkActive]="['active-item']">
+        <img src="assets/svg/home-icon.svg" alt="home icon" />
+        <span class="nav-item-text" [routerLinkActive]="['hidden']"
+          >الرئيسية</span
+        >
+        <span class="circle" [routerLinkActive]="['visible']"></span>
+      </a>
+    </li>
+    <span class="seperator"></span>
+    <li>
+      <a routerLink="/history" [routerLinkActive]="['active-item']">
+        <img src="assets/svg/history-icon.svg" alt="history icon" />
+        <span class="nav-item-text" [routerLinkActive]="['hidden']">السجل</span>
+        <span class="circle" [routerLinkActive]="['visible']"></span>
+      </a>
+    </li>
+    <span class="seperator"></span>
+    <li>
+      <a routerLink="/timer" [routerLinkActive]="['active-item']">
+        <img src="assets/svg/timer-icon.svg" alt="timer icon" />
+        <span class="nav-item-text" [routerLinkActive]="['hidden']">مؤقت</span>
+        <span class="circle" [routerLinkActive]="['visible']"></span>
+      </a>
+    </li>
+    <span class="seperator"></span>
+    <li>
+      <a routerLink="/games" [routerLinkActive]="['active-item']">
+        <img src="assets/svg/controller-icon.svg" alt="controller icon" />
+        <span class="nav-item-text" [routerLinkActive]="['hidden']">ترفيه</span>
+        <span class="circle" [routerLinkActive]="['visible']"></span>
+      </a>
+    </li>
+    <span class="seperator"></span>
+    <li>
+      <a routerLink="/settings" [routerLinkActive]="['active-item']">
+        <img src="assets/svg/settings-icon.svg" alt="settings icon" />
+        <span class="nav-item-text" [routerLinkActive]="['hidden']"
+          >الإعدادات</span
+        >
+        <span class="circle" [routerLinkActive]="['visible']"></span>
+      </a>
+    </li>
+  </ul>
+</nav>

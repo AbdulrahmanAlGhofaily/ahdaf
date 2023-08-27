@@ -1,0 +1,118 @@
+<section class="goal-view" (click)="closeGoalView($event)">
+  <div
+    *ngIf="goal"
+    class="goal-view-container glassy smooth-corners main-padding"
+  >
+    <div *ngIf="editMode === false" class="view-mode">
+      <div class="goal-view-header">
+        <h1>{{ goal.title }}</h1>
+        <button (click)="closeGoal()">العودة للأهداف</button>
+      </div>
+      <div class="goal-view-body">
+        <div class="goal-view-body-info-item">
+          <h3>الوصف:</h3>
+          <p *ngIf="goal.description; else elseBlock">{{ goal.description }}</p>
+          <ng-template #elseBlock>
+            <p>لا يوجد وصف</p>
+          </ng-template>
+        </div>
+        <div class="goal-view-body-info-item">
+          <h3>الموعد النهائي:</h3>
+          <p>{{ getGoalEndDate() }}</p>
+        </div>
+        <div class="goal-view-body-info-item">
+          <h3 for="done">تحديد كهدف محقق:</h3>
+          <div class="checkmark-container">
+            <input
+              type="checkbox"
+              name="done"
+              id="done"
+              class="done-checkbox"
+              [(ngModel)]="done"
+              (change)="onDoneChange()"
+            />
+            <span class="fake-check-box"></span>
+          </div>
+        </div>
+      </div>
+      <div class="goal-view-header-btns">
+        <button
+          [style]="{ backgroundColor: 'rgba(255, 0, 0, 0.2)' }"
+          (click)="deleteGoal()"
+        >
+          حذف
+        </button>
+        <button (click)="enterEditMode()">تعديل</button>
+      </div>
+    </div>
+    <div *ngIf="editMode === true" class="edit-mode">
+      <form (ngSubmit)="updateGoal(updateGoalForm)" #updateGoalForm="ngForm">
+        <h1>تعديل الهدف</h1>
+        <div class="form-group">
+          <label for="title">عنوان الهدف:</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            required
+            #title="ngModel"
+            ngModel
+            [(ngModel)]="goal.title"
+          />
+          <div
+            *ngIf="title.invalid && (title.dirty || title.touched)"
+            class="error-message"
+          >
+            عنوان الهدف مطلوب
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description">وصف الهدف:</label>
+          <textarea
+            name="description"
+            id="description"
+            ngModel
+            [(ngModel)]="goal.description"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="deadline">الموعد النهائي لتحقيق الهدف:</label>
+          <input
+            type="date"
+            name="deadline"
+            id="deadline"
+            [min]="minDate"
+            required
+            ngModel
+            #deadline="ngModel"
+            [(ngModel)]="goal.endDate"
+          />
+          <div
+            *ngIf="deadline.invalid && (deadline.dirty || deadline.touched)"
+            class="error-message"
+          >
+            الموعد النهائي لتحقيق الهدف مطلوب
+          </div>
+        </div>
+        <div class="form-btn-group">
+          <button
+            [disabled]="updateGoalForm.invalid"
+            [ngClass]="{ 'disabled-btn': updateGoalForm.invalid }"
+          >
+            تعديل
+          </button>
+          <button
+            type="button"
+            (click)="leaveEditMode()"
+            [style]="{ backgroundColor: 'rgba(255, 0, 0, 0.2)' }"
+          >
+            إلغاء
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div *ngIf="!goal" class="goal-doesnt-exist">
+    <h1>No such goal with id: {{ goalId }}</h1>
+  </div>
+</section>

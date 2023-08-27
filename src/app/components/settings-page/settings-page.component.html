@@ -1,0 +1,39 @@
+<main
+  class="glassy smooth-bottom-corners row main-padding shadow-bottom settings"
+>
+  <h1>الإعدادات</h1>
+  <section class="setting-group">
+    <h3>السمة:</h3>
+    <div class="themes">
+      <div
+        class="theme"
+        (click)="
+          changeTheme('linear-gradient(90deg, #ff4768 0%, #430278 100%)')
+        "
+      >
+        <div class="theme-style stc"></div>
+        <label for="theme-style">STC</label>
+      </div>
+
+      <div
+        class="theme"
+        (click)="
+          changeTheme('linear-gradient(90deg, #f8997d 0%, #ad336d 100%)')
+        "
+      >
+        <div class="theme-style default"></div>
+        <label for="theme-style">Default</label>
+      </div>
+
+      <div
+        class="theme"
+        (click)="
+          changeTheme('linear-gradient(90deg, #30cfd0 0%, #330867 100%)')
+        "
+      >
+        <div class="theme-style winter-neva"></div>
+        <label for="theme-style">Winter Neva</label>
+      </div>
+    </div>
+  </section>
+</main>

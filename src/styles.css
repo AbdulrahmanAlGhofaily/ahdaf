@@ -1,1 +1,144 @@
 /* You can add global styles to this file, and also import other style files */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  color: #fff;
+}
+
+@media screen and (max-width: 1124px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 30%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+body {
+  height: 100vh;
+  font-family: STC FORWARD;
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #f8997d 0%, #ad336d 100%);
+  background-repeat: no-repeat;
+  /* background: linear-gradient(90deg, #ff4768 0%, #430278 100%); */
+}
+
+input {
+  font-family: STC FORWARD;
+  font-size: 1.6rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  line-height: 2.6rem;
+  padding: 0.2rem 1rem;
+  border: none;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  font-family: STC FORWARD;
+  font-size: 1.6rem;
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 1rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.glassy {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.shadow-top {
+  box-shadow: 0px -8px 20px 5px rgba(0, 0, 0, 0.15);
+}
+
+.shadow-bottom {
+  box-shadow: 0px 8px 20px 5px rgba(0, 0, 0, 0.15);
+}
+
+.main-padding {
+  padding: 3rem;
+}
+
+.secondary-padding {
+  padding: 2rem;
+}
+
+.smooth-corners {
+  border-radius: 30px;
+}
+
+.smooth-top-corners {
+  border-radius: 30px 30px 0 0;
+}
+
+.smooth-bottom-corners {
+  border-radius: 0 0 30px 30px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

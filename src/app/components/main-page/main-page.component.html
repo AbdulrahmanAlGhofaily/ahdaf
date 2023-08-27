@@ -1,0 +1,15 @@
+<section class="glassy row toolbar">
+  <div class="search-bar">
+    <img src="assets/svg/search-icon.svg" alt="" />
+    <input type="text" dir="rtl" placeholder="البحث عن هدف..." />
+  </div>
+  <button (click)="openNewGoalForm()">إضافة هدف جديد</button>
+</section>
+
+<main class="glassy smooth-bottom-corners row main-padding shadow-bottom">
+  <ul class="cards-container">
+    <app-card *ngFor="let goal of goals" [goalData]="goal" />
+  </ul>
+</main>
+
+<router-outlet />

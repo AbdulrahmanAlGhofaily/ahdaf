@@ -1,0 +1,47 @@
+.cards-container {
+  width: 100%;
+  max-height: 50rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  column-gap: 4rem;
+  row-gap: 3rem;
+  overflow-y: scroll;
+}
+
+.toolbar {
+  padding: 1rem 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar {
+  padding: 0.2rem 1rem;
+  width: 30rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-bar input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+.search-bar img {
+  height: 2rem;
+  padding-left: 1rem;
+  border-left: rgba(255, 255, 255, 0.8) 1px solid;
+}
