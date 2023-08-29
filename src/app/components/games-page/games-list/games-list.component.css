@@ -1,0 +1,26 @@
+.games-list {
+  display: flex;
+}
+
+:host {
+  width: 100%;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.game-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 15px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+}

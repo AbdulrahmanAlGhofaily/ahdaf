@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { GoalsService } from './services/goals.service';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { ViewGoalComponent } from './components/shared/view-goal/view-goal.component';
+import { GuessTheNumberComponent } from './components/games-page/guess-the-number/guess-the-number.component';
+import { GamesListComponent } from './components/games-page/games-list/games-list.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { ViewGoalComponent } from './components/shared/view-goal/view-goal.compo
     NewGoalComponent,
     ErrorPageComponent,
     ViewGoalComponent,
+    GuessTheNumberComponent,
+    GamesListComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [GoalsService],

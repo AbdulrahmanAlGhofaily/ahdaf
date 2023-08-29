@@ -26,5 +26,9 @@ export class AppComponent implements OnInit {
       const theme = localStorage.getItem('theme') || '';
       this.settings.setTheme(theme);
     }
+
+    if (!localStorage.getItem('gamesData')) {
+      localStorage.setItem('gamesData', '{}');
+    }
   }
 }

@@ -1,0 +1,28 @@
+<div class="game-container">
+  <div class="game-header-controls">
+    <p>(خمن رقماً بين ال1 وال100)</p>
+    <button (click)="resetGame()">إعادة المحاولة</button>
+  </div>
+
+  <div class="game-feedback">
+    <span class="emoji-feedback">{{ emoji }}</span>
+    <p class="text-feedback">{{ message }}</p>
+  </div>
+
+  <div class="game-group-container">
+    <div class="game-main-controls">
+      <input type="number" min="1" max="100" [(ngModel)]="userGuess" />
+      <button
+        (click)="checkGuess()"
+        [disabled]="disableButton"
+        [style.cursor]="disableButton ? 'not-allowed' : 'pointer'"
+      >
+        خمن
+      </button>
+    </div>
+    <div class="game-info">
+      <p class="attempts-left">عدد المحاولات: {{ numberOfGuesses }} 💯</p>
+      <p class="highscore">أفضل نتيجة: {{ highscore }} 🥇</p>
+    </div>
+  </div>
+</div>
