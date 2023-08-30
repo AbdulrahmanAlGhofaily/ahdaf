@@ -10,6 +10,8 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
 import { ViewGoalComponent } from './components/shared/view-goal/view-goal.component';
 import { GamesListComponent } from './components/games-page/games-list/games-list.component';
 import { GuessTheNumberComponent } from './components/games-page/guess-the-number/guess-the-number.component';
+import { TimerComponent } from './components/timer-page/timer/timer.component';
+import { StopWatchComponent } from './components/timer-page/stop-watch/stop-watch.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
@@ -28,7 +30,14 @@ const routes: Routes = [
     ],
   },
   { path: 'history', component: HistoryPageComponent },
-  { path: 'timer', component: TimerPageComponent },
+  {
+    path: 'timers',
+    component: TimerPageComponent,
+    children: [
+      { path: 'normal-timer', component: TimerComponent },
+      { path: 'stop-watch', component: StopWatchComponent },
+    ],
+  },
   {
     path: 'games',
     component: GamesPageComponent,

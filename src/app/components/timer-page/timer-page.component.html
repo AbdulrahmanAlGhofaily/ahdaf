@@ -1,3 +1,28 @@
 <main
-  class="glassy smooth-bottom-corners row main-padding shadow-bottom"
-></main>
+  class="glassy smooth-bottom-corners row main-padding shadow-bottom main-timer-container"
+>
+  <div class="timer-switch smooth-corners">
+    <a
+      [routerLink]="['normal-timer']"
+      routerLinkActive="active-timer-switch-btn"
+      class="timer-switch-btn"
+    >
+      <span>
+        <img src="assets/svg/timer-second-icon.svg" />
+      </span>
+      <p>المؤقت</p>
+    </a>
+    <span class="seperator"></span>
+    <a
+      [routerLink]="['stop-watch']"
+      routerLinkActive="active-timer-switch-btn"
+      class="timer-switch-btn"
+    >
+      <span>
+        <img src="assets/svg/timer-icon.svg" />
+      </span>
+      <p>ساعة الإيقاف</p>
+    </a>
+  </div>
+  <router-outlet></router-outlet>
+</main>

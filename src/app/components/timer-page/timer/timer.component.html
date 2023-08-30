@@ -1,0 +1,58 @@
+<div class="normal-timer-container">
+  <div class="timer-info">
+    <input
+      type="number"
+      [(ngModel)]="timerValues.hours"
+      (input)="validateInput('hours', $event)"
+      max="23"
+      min="0"
+      [disabled]="isTimerRunning || timerValueInSeconds !== 0"
+    />
+    :<input
+      type="number"
+      [(ngModel)]="timerValues.minutes"
+      (input)="validateInput('minutes', $event)"
+      max="59"
+      min="0"
+      [disabled]="isTimerRunning || timerValueInSeconds !== 0"
+    />
+    :<input
+      type="number"
+      [(ngModel)]="timerValues.seconds"
+      (input)="validateInput('seconds', $event)"
+      max="59"
+      min="0"
+      [disabled]="isTimerRunning || timerValueInSeconds !== 0"
+    />
+  </div>
+  <div class="timer-controls">
+    <button
+      (click)="startTimer()"
+      [ngClass]="isTimerRunning ? 'hidden' : ''"
+      [disabled]="
+        timerValues.hours === '00' &&
+        timerValues.minutes === '00' &&
+        timerValues.seconds === '00'
+      "
+      [ngClass]="{
+        'disabled-cursor':
+          timerValues.hours === '00' &&
+          timerValues.minutes === '00' &&
+          timerValues.seconds === '00'
+      }"
+    >
+      بدء
+    </button>
+    <button (click)="pauseTimer()" [ngClass]="isTimerRunning ? '' : 'hidden'">
+      إيقاف
+    </button>
+    <button
+      (click)="resetTimer()"
+      class="cancel"
+      [disabled]="!isTimerRunning"
+      [ngClass]="{ 'disabled-cursor': !isTimerRunning }"
+    >
+      إعادة تعيين
+    </button>
+  </div>
+</div>

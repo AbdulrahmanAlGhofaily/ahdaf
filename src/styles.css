@@ -124,6 +124,10 @@ button:hover {
   padding: 2rem;
 }
 
+.secondary-padding {
+  padding: 2rem;
+}
+
 .smooth-corners {
   border-radius: 30px;
 }

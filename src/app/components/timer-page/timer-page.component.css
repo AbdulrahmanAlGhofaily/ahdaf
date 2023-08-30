@@ -1,0 +1,43 @@
+.main-timer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.timer-switch {
+  width: 35rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.timer-switch-btn {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.timer-switch-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.active-timer-switch-btn {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.seperator {
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+  height: 80%;
+}

@@ -18,6 +18,8 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
 import { ViewGoalComponent } from './components/shared/view-goal/view-goal.component';
 import { GuessTheNumberComponent } from './components/games-page/guess-the-number/guess-the-number.component';
 import { GamesListComponent } from './components/games-page/games-list/games-list.component';
+import { TimerComponent } from './components/timer-page/timer/timer.component';
+import { StopWatchComponent } from './components/timer-page/stop-watch/stop-watch.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { GamesListComponent } from './components/games-page/games-list/games-lis
     ViewGoalComponent,
     GuessTheNumberComponent,
     GamesListComponent,
+    TimerComponent,
+    StopWatchComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [GoalsService],

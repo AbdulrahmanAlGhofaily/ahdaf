@@ -1,0 +1,17 @@
+<div class="normal-timer-container">
+  <div class="timer-info">
+    <span>{{ timerValues.hours }}</span
+    >:<span>{{ timerValues.minutes }}</span
+    >:<span>{{ timerValues.seconds }}</span
+    >:<span>{{ timerValues.milliseconds }}</span>
+  </div>
+  <div class="timer-controls">
+    <button (click)="startTimer()" [ngClass]="isTimerRunning ? 'hidden' : ''">
+      بدء
+    </button>
+    <button (click)="pauseTimer()" [ngClass]="isTimerRunning ? '' : 'hidden'">
+      إيقاف
+    </button>
+    <button (click)="resetTimer()" class="cancel">إعادة تعيين</button>
+  </div>
+</div>

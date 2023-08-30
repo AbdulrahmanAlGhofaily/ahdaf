@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as canvasConfetti from 'canvas-confetti';
+import { Howl, Howler } from 'howler';
 
 @Component({
   selector: 'app-guess-the-number',
@@ -16,6 +18,10 @@ export class GuessTheNumberComponent implements OnInit {
   message: string = 'خمن رقماً 😄';
   emoji: string = '❓';
   disableButton: boolean = false;
+  sound = new Howl({
+    src: ['assets/sounds/confetti-pop-sound-effect.mp3'],
+    volume: 0.2,
+  });
 
   constructor() {
     this.randomNumber = Math.floor(Math.random() * 100 + 1);
@@ -48,6 +54,23 @@ export class GuessTheNumberComponent implements OnInit {
       this.numberOfGuesses++;
       this.message = `${this.randomNumber} هو الرقم الصحيح!`;
       this.emoji = '🥳';
+      this.sound.play();
+      canvasConfetti.create(
+        document.querySelector('.canvas') as HTMLCanvasElement,
+        {
+          resize: true,
+          useWorker: true,
+        }
+      )({
+        particleCount: 200,
+        spread: 150,
+        origin: {
+          y: 0.45,
+        },
+        ticks: 300,
+        scalar: 1,
+      });
+
       if (this.numberOfGuesses < this.highscore || this.highscore == 0) {
         this.highscore = this.numberOfGuesses;
         const gameData = JSON.parse(
