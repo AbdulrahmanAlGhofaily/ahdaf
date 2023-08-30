@@ -10,6 +10,7 @@ import { GoalsService } from 'src/app/services/goals.service';
 })
 export class MainPageComponent implements OnInit {
   goals: Goal[] = [];
+  searchText: string = '';
 
   constructor(private goalService: GoalsService, private router: Router) {}
 

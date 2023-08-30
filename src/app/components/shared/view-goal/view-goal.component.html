@@ -20,20 +20,6 @@
           <h3>الموعد النهائي:</h3>
           <p>{{ getGoalEndDate() }}</p>
         </div>
-        <div class="goal-view-body-info-item">
-          <h3 for="done">تحديد كهدف محقق:</h3>
-          <div class="checkmark-container">
-            <input
-              type="checkbox"
-              name="done"
-              id="done"
-              class="done-checkbox"
-              [(ngModel)]="done"
-              (change)="onDoneChange()"
-            />
-            <span class="fake-check-box"></span>
-          </div>
-        </div>
       </div>
       <div class="goal-view-header-btns">
         <button

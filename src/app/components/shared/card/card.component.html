@@ -1,5 +1,6 @@
+<canvas class="canvas"></canvas>
 <li>
-  <a class="card smooth-corners" [routerLink]="[goalData.id]">
+  <div class="card smooth-corners" [routerLink]="[goalData.id]">
     <h3 class="max-text">{{ goalData.title }}</h3>
     <span class="seprator"></span>
     <p class="max-text" *ngIf="goalData.description; else elseBlock">
@@ -9,13 +10,25 @@
       <p class="card-discription">لا يوجد وصف</p>
     </ng-template>
     <span class="seprator"></span>
-    <div class="card-dates">
-      <span>النهاية: {{ getGoalEndDate() }}</span>
-      <span *ngIf="goalData.status === 'active'"
-        >تبقى: {{ getDaysLeft() }} أيام</span
+    <div class="card-date-and-control">
+      <div class="card-dates">
+        <span>النهاية: {{ getGoalEndDate() }}</span>
+        <span *ngIf="goalData.status === 'active' && getDaysLeft() > 0"
+          >تبقى: {{ getDaysLeft() }} أيام</span
+        >
+        <span *ngIf="goalData.status === 'active' && getDaysLeft() === 0"
+          >تبقى: أقل من يوم</span
+        >
+        <span *ngIf="goalData.status === 'done'">تم تحقيق الهدف 🎉</span>
+      </div>
+      <button
+        class="complete-goal-btn"
+        type="button"
+        (click)="handleGoalDone($event)"
       >
-      <span *ngIf="goalData.status === 'done'">تم تحقيق الهدف 🎉</span>
+        {{ goalData.status === "active" ? "إكمال الهدف" : "متابعة الهدف" }}
+      </button>
     </div>
     <div class="card-status" [ngClass]="goalData.status"></div>
-  </a>
+  </div>
 </li>

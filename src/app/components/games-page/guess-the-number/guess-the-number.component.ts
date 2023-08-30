@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as canvasConfetti from 'canvas-confetti';
-import { Howl, Howler } from 'howler';
+import { Howl } from 'howler';
 
 @Component({
   selector: 'app-guess-the-number',

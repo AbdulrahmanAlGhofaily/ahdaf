@@ -20,6 +20,7 @@ import { GuessTheNumberComponent } from './components/games-page/guess-the-numbe
 import { GamesListComponent } from './components/games-page/games-list/games-list.component';
 import { TimerComponent } from './components/timer-page/timer/timer.component';
 import { StopWatchComponent } from './components/timer-page/stop-watch/stop-watch.component';
+import { GoalFilterPipe } from './pipes/goal-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { StopWatchComponent } from './components/timer-page/stop-watch/stop-watc
     GamesListComponent,
     TimerComponent,
     StopWatchComponent,
+    GoalFilterPipe,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [GoalsService],
