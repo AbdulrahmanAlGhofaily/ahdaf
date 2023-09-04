@@ -42,7 +42,7 @@ This will start the development server. Open your browser and navigate to http:/
 
 Here's a list of tasks to improve and extend the Ahdaf project:
 
-- [ ] Add a timer to the app
+- [x] Add a timer to the app
 - [ ] Add history feature
 - [ ] Add responsivity
 - [ ] Add more games
