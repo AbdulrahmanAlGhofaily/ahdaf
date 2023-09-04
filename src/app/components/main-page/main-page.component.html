@@ -17,6 +17,9 @@
       *ngFor="let goal of goals | goalFilter : searchText"
       [goalData]="goal"
     />
+    <h1 class="no-goals" *ngIf="goals.length === 0">
+      لا يوجد لديك أهداف حالياً, قم بإضافة هدف جديد.
+    </h1>
   </ul>
 </main>
 

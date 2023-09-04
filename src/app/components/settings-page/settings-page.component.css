@@ -49,3 +49,16 @@
   background: linear-gradient(90deg, #30cfd0 0%, #330867 100%);
   background-repeat: no-repeat;
 }
+
+.languages-selector {
+  width: fit-content;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  color: #fff;
+  font-family: STC Forward;
+  font-size: 1.6rem;
+}
+
+.margin-top {
+  margin-top: 3rem;
+}
